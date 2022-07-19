@@ -201,6 +201,9 @@
 "onboarding.connection_error.title" = "Nie udało się połączyć";
 "onboarding.connection_test_result.authentication_unsupported.description" = "Typ uwierzytelnienia nie jest obsługiwany %@.";
 "onboarding.connection_test_result.basic_auth.description" = "Podstawowe uwierzytelnianie HTTP nie jest obsługiwane.";
+"onboarding.connection_test_result.certificate_error.action_dont_trust" = "Don't Trust";
+"onboarding.connection_test_result.certificate_error.action_trust" = "Trust Certificate";
+"onboarding.connection_test_result.certificate_error.title" = "Failed to connect securely";
 "onboarding.connection_test_result.client_certificate.description" = "Uwierzytelnianie certyfikatu klienta nie jest obsługiwane.";
 "onboarding.connection_test_result.error_code" = "Error Code:";
 "onboarding.connection_test_result.local_network_permission.description" = "Uprawnienie do prywatności \"Sieć lokalna\" mogło zostać odrzucone. Można to zmienić w systemowej aplikacji Ustawienia.";
