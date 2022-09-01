@@ -88,7 +88,7 @@ internal struct PotentialLocation: Comparable, CustomStringConvertible {
 
         func isBadCoordinateValue(_ value: Double) -> Bool {
             // this is within 110µm of 0.0 latitude/longitude and is very unlikely to really happen
-            (value >= 0 && value <= 0.000000001) || (value >= -0.000000001 && value <= 0)
+            (value >= -0.000000001) && (value <= 0.000000001)
         }
 
         if isBadCoordinateValue(location.coordinate.latitude) || isBadCoordinateValue(location.coordinate.longitude) {
