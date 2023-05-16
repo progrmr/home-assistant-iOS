@@ -482,9 +482,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func authenticateWithBiometrics() {
+        guard Current.settingsStore.privacy.biometrics else {
+            return  // biometric authentication not enabled
+        }
+        
         let context = LAContext()
         var error: NSError?
-        
         if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             let reason = "Authenticate to access the app"
             

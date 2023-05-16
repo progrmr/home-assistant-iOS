@@ -187,6 +187,7 @@ public class SettingsStore {
     }
 
     public struct Privacy {
+        public var biometrics: Bool
         public var messaging: Bool
         public var crashes: Bool
         public var analytics: Bool
@@ -196,6 +197,7 @@ public class SettingsStore {
 
         internal static func key(for keyPath: KeyPath<Privacy, Bool>) -> String {
             switch keyPath {
+            case \.biometrics: return "biometricsEnabled"
             case \.messaging: return "messagingEnabled"
             case \.crashes: return "crashesEnabled"
             case \.analytics: return "analyticsEnabled"
@@ -208,6 +210,7 @@ public class SettingsStore {
 
         internal static func `default`(for keyPath: KeyPath<Privacy, Bool>) -> Bool {
             switch keyPath {
+            case \.biometrics: return false
             case \.messaging: return true
             case \.crashes: return false
             case \.analytics: return false
@@ -231,6 +234,7 @@ public class SettingsStore {
             }
 
             return .init(
+                biometrics: boolValue(for: \.biometrics),
                 messaging: boolValue(for: \.messaging),
                 crashes: boolValue(for: \.crashes),
                 analytics: boolValue(for: \.analytics),
@@ -240,6 +244,7 @@ public class SettingsStore {
             )
         }
         set {
+            prefs.set(newValue.biometrics, forKey: Privacy.key(for: \.biometrics))
             prefs.set(newValue.messaging, forKey: Privacy.key(for: \.messaging))
             prefs.set(newValue.crashes, forKey: Privacy.key(for: \.crashes))
             prefs.set(newValue.analytics, forKey: Privacy.key(for: \.analytics))
