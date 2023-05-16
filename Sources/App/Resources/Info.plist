@@ -697,5 +697,7 @@
 		<key>TemporaryFullAccuracyReasonManualUpdate</key>
 		<string>[localized in strings file]</string>
 	</dict>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Protect access to home assistant by requiring Face ID (or Touch ID) when the app starts</string>
 </dict>
 </plist>

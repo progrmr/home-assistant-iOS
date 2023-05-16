@@ -13,6 +13,7 @@ import SafariServices
 import Shared
 import UIKit
 import XCGLogger
+import LocalAuthentication
 
 let keychain = Constants.Keychain
 
@@ -139,6 +140,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkForUpdate()
         checkForAlerts()
 
+        authenticateWithBiometrics()
+        
         return true
     }
 
@@ -478,6 +481,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func authenticateWithBiometrics() {
+        let context = LAContext()
+        var error: NSError?
+        
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            let reason = "Authenticate to access the app"
+            
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, error in
+                DispatchQueue.main.async {
+                    if success {
+                        // Authentication successful, allow access to the app
+                        //self.performSegue(withIdentifier: "authenticatedSegue", sender: self)
+                    } else {
+                        // Authentication failed or user canceled
+                        if let error = error {
+                            print("Authentication failed: \(error.localizedDescription)")
+                        }
+                    }
+                }
+            }
+        } else {
+            // Device doesn't support biometric authentication
+            if let error = error {
+                print("Biometric authentication not available: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    // Trigger authentication when a button is tapped, for example
+    @IBAction func authenticateButtonTapped(_ sender: UIButton) {
+        authenticateWithBiometrics()
+    }
+    
     func setupWatchCommunicator() {
         Current.servers.add(observer: self)
 
