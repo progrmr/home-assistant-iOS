@@ -512,6 +512,8 @@ Home Assistant is free and open source home automation software with a focus on 
 "settings_details.privacy.crash_reporting.title" = "Crash Reporting";
 "settings_details.privacy.messaging.description" = "Firebase Cloud Messaging must be enabled for push notifications to function.";
 "settings_details.privacy.messaging.title" = "Firebase Cloud Messaging";
+"settings_details.privacy.biometrics.description" = "Unlock this app with Face ID (or Touch ID) authentication at startup.";
+"settings_details.privacy.biometrics.title" = "Use Face/Touch ID";
 "settings_details.privacy.title" = "Privacy";
 "settings_details.updates.check_for_updates.include_betas" = "Include Beta Releases";
 "settings_details.updates.check_for_updates.title" = "Automatically Check for Updates";

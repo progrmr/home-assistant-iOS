@@ -512,6 +512,8 @@ Home Assistant es un software de automatización del hogar gratuito y de código
 "settings_details.privacy.crash_reporting.title" = "Informes de Errores";
 "settings_details.privacy.messaging.description" = "Firebase Cloud Messaging debe estar habilitado para que funcionen las notificaciones push.";
 "settings_details.privacy.messaging.title" = "Firebase Cloud Messaging";
+"settings_details.privacy.biometrics.description" = "Desbloquea esta app con la autenticación de Face ID (o Touch ID) al iniciar.";
+"settings_details.privacy.biometrics.title" = "Usa Face/Touch ID";
 "settings_details.privacy.title" = "Privacidad";
 "settings_details.updates.check_for_updates.include_betas" = "Incluir versiones beta";
 "settings_details.updates.check_for_updates.title" = "Buscar actualizaciones automáticamente";

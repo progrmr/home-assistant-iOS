@@ -1668,6 +1668,12 @@ public enum L10n {
         /// Analytics
         public static var genericTitle: String { return L10n.tr("Localizable", "settings_details.privacy.analytics.generic_title") }
       }
+      public enum Biometrics {
+        /// Unlock this app with Face ID (or Touch ID) authentication at startup.
+        public static var description: String { return L10n.tr("Localizable", "settings_details.privacy.biometrics.description") }
+        /// Use Face/Touch ID
+        public static var title: String { return L10n.tr("Localizable", "settings_details.privacy.biometrics.title") }
+      }
       public enum CrashReporting {
         /// Allows for deeper tracking of crashes and other errors in the app, leading to faster fixes being published. No user identifiable information is sent, other than basic device information. You must restart the app for changes to this setting to take effect.
         public static var description: String { return L10n.tr("Localizable", "settings_details.privacy.crash_reporting.description") }

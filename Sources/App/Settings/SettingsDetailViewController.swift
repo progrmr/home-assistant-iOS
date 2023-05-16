@@ -462,6 +462,13 @@ class SettingsDetailViewController: HAFormViewController, TypedRowControllerType
             title = L10n.SettingsDetails.Privacy.title
 
             form
+                +++ Section(header: nil, footer: L10n.SettingsDetails.Privacy.Biometrics.description)
+                <<< SwitchRow {
+                    $0.title = L10n.SettingsDetails.Privacy.Biometrics.title
+                    $0.value = Current.settingsStore.privacy.biometrics
+                }.onChange { row in
+                    Current.settingsStore.privacy.biometrics = row.value ?? true
+                }
                 +++ Section(header: nil, footer: L10n.SettingsDetails.Privacy.Messaging.description)
                 <<< SwitchRow {
                     $0.title = L10n.SettingsDetails.Privacy.Messaging.title
